@@ -13,7 +13,6 @@ import matplotlib.pyplot as plt
 # DEFINITION D'UN CERTAIN NOMBRE DE FONCTIONS UTILES AU COURS DE LA SIMULATION
 ##################################################################################
 
-
 def init_dist(Matrice):
 
     M = len(Matrice[0])  # nombre d'abscisses
@@ -27,7 +26,6 @@ def init_dist(Matrice):
             Matrice[i][j] = nombre_aleat_case
 
     return Matrice
-
 
 def iter_dist(Matrice):
 
@@ -61,8 +59,7 @@ def cases(Matrice, couleur):
     return ListePoints
 
 # fonction prenant en paramètre une matrice
-# ON Fixe la couleur de l'équipe Bleu, Jaune
-
+# ON Fixe la couleur de l'équipe Bleue, Jaune
 
 def casesFixées(Matrice, couleur):
     M = len(Matrice[0])  # nombre d'abscisses
@@ -80,7 +77,6 @@ def casesFixées(Matrice, couleur):
                 ListePointsFixes.append([j, i])
 
     return ListePointsFixes
-
 
 def initVerts(Matrice):
     M = len(Matrice[0])  # nombre d'abscisses
@@ -108,7 +104,6 @@ def initVerts(Matrice):
     # les points noirs (leurs abscisses et leurs ordonnées) ;
     # les points bleu (leurs abscisses et leurs ordonnées)
     # les points jaunes (leurs abscisses et leurs ordonnées)
-
 
 def affichageCases(Matrice):
     # nombre d'abscisses
@@ -176,9 +171,8 @@ N = int(L/longueur) + 1
 # représentation du quadrillage par une matrice carrée de taille N*N (modèle bidimensionnel)
 Matrice = np.zeros((N, N))
 
-# nombre de points rouges visé par la simulation
+# nombre de points bleu visé par la simulation
 K = 24
-
 
 # AFFICHAGE DU MAILLAGE AVANT DEPART DE LA SIMULATION (que des points verts)
 # Construction de la liste des abscisses
@@ -192,9 +186,7 @@ for i in range(N):
 
 plt.pause(15)
 
-
 Matrice = init_dist(Matrice)
-
 
 print(Matrice)
 # BOUCLE EFFECTUANT LA SIMULATION
@@ -205,7 +197,6 @@ ListeCasesRouges = []
 OK = True
 while (OK):
     # AFFICHAGE DES POINTS DANS MATPLOTLIB A CHAQUE ITERATION POUR SUIVRE L'EVOLUTION DE LA DISTRIBUTION
-
     Xrouges = affichageCases(Matrice)[2]
     Yrouges = affichageCases(Matrice)[3]
     Xnoirs = affichageCases(Matrice)[4]
